@@ -1,10 +1,16 @@
+Done! I’ve cleaned up the formatting, fixed the nested code blocks, and organized everything into a single, clean Markdown file.
+
+You can copy the content below and save it as `README.md`.
+
+---
+
+```markdown
 # 💘 Valentine React Game
 
 A fun and interactive **Valentine’s Day game** built with **React + TypeScript + Vite** 💝  
-The goal is simple:
 
-> ❌ Make it *impossible* to click **NO**  
-> ✅ Force the player to click **YES** 😏
+The goal is simple:
+> ❌ Make it *impossible* to click **NO** > ✅ Force the player to click **YES** 😏
 
 Perfect for Valentine’s Day, pranks, or just making someone smile ❤️
 
@@ -12,10 +18,10 @@ Perfect for Valentine’s Day, pranks, or just making someone smile ❤️
 
 ## 🕹️ How It Works
 
-- ❌ The **NO** button escapes randomly when you try to hover or click it  
-- ✅ The **YES** button grows bigger every time  
-- 💬 Cute messages always stay visible at the top  
-- 💖 Clicking **YES** fills the screen with floating hearts and love  
+* ❌ The **NO** button escapes randomly when you try to hover or click it  
+* ✅ The **YES** button grows bigger every time  
+* 💬 Cute messages always stay visible at the top  
+* 💖 Clicking **YES** fills the screen with floating hearts and love  
 
 Once you start… there’s no escape 😈💕
 
@@ -24,37 +30,132 @@ Once you start… there’s no escape 😈💕
 ## 🚀 Live Demo
 
 👉 Coming soon  
-(Deploy easily to **Netlify** or **Vercel**)
+(You can deploy this easily on **Netlify** or **Vercel**)
 
 ---
 
 ## 🛠️ Tech Stack
 
-- ⚛️ React  
-- 🟦 TypeScript  
-- ⚡ Vite  
-- 🎨 CSS animations  
-- 📦 pnpm  
-
----
+* ⚛️ **React** * 🟦 **TypeScript** * ⚡ **Vite** * 🎨 **CSS Animations** * 📦 **pnpm** ---
 
 ## 📦 Installation & Setup
 
 Follow these steps to run the project locally:
 
 ### 1️⃣ Clone the repository
-
 ```bash
-git clone https://github.com/ayushks1ngh/valentine-react-game.git
+git clone [https://github.com/ayushks1ngh/valentine-react-game.git](https://github.com/ayushks1ngh/valentine-react-game.git)
 cd valentine-react-game
+
+```
 
 ### 2️⃣ Install dependencies
 
+Make sure `pnpm` is installed:
+
 ```bash
 npm install -g pnpm
+
 ```
 
 Then install project dependencies:
 
 ```bash
 pnpm install
+
+```
+
+### 3️⃣ Run the development server
+
+```bash
+pnpm run dev
+
+```
+
+### 4️⃣ Open in your browser
+
+Navigate to: `http://localhost:5173`
+
+---
+
+## 📁 Project Structure
+
+```text
+src/
+├── assets/
+├── App.tsx
+├── App.css
+├── main.tsx
+└── index.css
+
+```
+
+---
+
+## ✨ Features
+
+* 🎯 **Impossible-to-click NO button**: Uses mouse event logic to move away.
+* 📈 **Growing YES button**: Increases in scale with every failed "No" attempt.
+* 💬 **Dynamic love messages**: Updates text to guilt-trip or charm the user.
+* 💖 **Heart animations**: Triggered upon clicking "Yes".
+* 📱 **Responsive design**: Works on mobile and desktop.
+* ⚡ **Fast refresh**: Powered by Vite for instant feedback.
+
+---
+
+## 🧪 Available Scripts
+
+| Command | Description |
+| --- | --- |
+| `pnpm run dev` | Starts the development server |
+| `pnpm run build` | Builds the app for production |
+| `pnpm run preview` | Previews the production build locally |
+
+---
+
+## 📸 Preview
+
+*(Add screenshots or a GIF here later - Recommended: NO button escaping 😄)*
+
+---
+
+## 🧠 What I Learned
+
+* React state & event handling
+* Complex mouse interactions
+* Conditional rendering for game states
+* Keyframe CSS animations
+* Git & GitHub professional workflow
+
+---
+
+## 📄 License
+
+MIT License — free to use and modify.
+
+---
+
+## ❤️ Credits
+
+Made with love and chaos by **Ayush** 💕
+
+If this made someone smile, mission accomplished 😌💖
+
+---
+
+## ⭐ Support
+
+If you like this project:
+
+* ⭐ **Star** the repo
+* 🍴 **Fork** it
+* 💌 **Share** it with someone special
+
+```
+
+---
+
+### 💡 What's next?
+To make this repo even more "Recruiter-ready," would you like me to generate a **deployment guide** for Vercel or help you write a **custom CSS snippet** for those floating heart animations?
+
+```
