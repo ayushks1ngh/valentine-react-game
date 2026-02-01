@@ -147,10 +147,3 @@ If you like this project:
 * 💌 **Share** it with someone special
 
 ```
-
----
-
-### 💡 What's next?
-To make this repo even more "Recruiter-ready," would you like me to generate a **deployment guide** for Vercel or help you write a **custom CSS snippet** for those floating heart animations?
-
-```
