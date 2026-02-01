@@ -113,11 +113,6 @@ src/
 
 ---
 
-## 📸 Preview
-
-*(Add screenshots or a GIF here later - Recommended: NO button escaping 😄)*
-
----
 
 ## 🧠 What I Learned
 
