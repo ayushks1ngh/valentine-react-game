@@ -13,15 +13,26 @@ function App() {
   const [hearts, setHearts] = useState<Heart[]>([]);
 
   const moveNoButton = () => {
+    const buttonWidth = 120;
+    const buttonHeight = 50;
+
+    const maxX = window.innerWidth - buttonWidth;
+    const maxY = window.innerHeight - buttonHeight;
+
+    const leftPx = Math.random() * maxX;
+    const topPx = Math.random() * maxY;
+
     setNoPos({
-      top: Math.random() * 70,
-      left: Math.random() * 70,
+      top: (topPx / window.innerHeight) * 100,
+      left: (leftPx / window.innerWidth) * 100,
     });
-    setYesScale((s) => s + 0.2);
+
+    setYesScale((s) => Math.min(s + 0.15, 2.5));
     setMessage("Hey! That's not allowed 😜");
   };
 
-  const yesClicked = () => {
+  const yesClicked = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setMessage("YAY! 💕 You made my day 😍");
 
     const newHearts = Array.from({ length: 25 }).map((_, i) => ({
@@ -58,6 +69,12 @@ function App() {
           className="no"
           style={{ top: `${noPos.top}%`, left: `${noPos.left}%` }}
           onMouseEnter={moveNoButton}
+          onMouseMove={moveNoButton}
+          onTouchStart={moveNoButton}
+          onClick={(e) => {
+            e.preventDefault();
+            moveNoButton();
+          }}
         >
           NO
         </button>
@@ -78,3 +95,4 @@ function App() {
 }
 
 export default App;
+
