@@ -1,10 +1,3 @@
-Done! I’ve cleaned up the formatting, fixed the nested code blocks, and organized everything into a single, clean Markdown file.
-
-You can copy the content below and save it as `README.md`.
-
----
-
-```markdown
 # 💘 Valentine React Game
 
 A fun and interactive **Valentine’s Day game** built with **React + TypeScript + Vite** 💝  
