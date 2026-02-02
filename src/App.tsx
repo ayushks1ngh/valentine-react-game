@@ -8,31 +8,29 @@ type Heart = {
 
 function App() {
   const [message, setMessage] = useState("");
-  const [noPos, setNoPos] = useState({ top: 50, left: 60 });
+  const [noPos, setNoPos] = useState({ top: 55, left: 55 });
   const [yesScale, setYesScale] = useState(1);
   const [hearts, setHearts] = useState<Heart[]>([]);
 
   const moveNoButton = () => {
-    const buttonWidth = 120;
-    const buttonHeight = 50;
+    const padding = 100;
 
-    const maxX = window.innerWidth - buttonWidth;
-    const maxY = window.innerHeight - buttonHeight;
+    const maxX = window.innerWidth - padding;
+    const maxY = window.innerHeight - padding;
 
-    const leftPx = Math.random() * maxX;
-    const topPx = Math.random() * maxY;
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
 
     setNoPos({
-      top: (topPx / window.innerHeight) * 100,
-      left: (leftPx / window.innerWidth) * 100,
+      left: (x / window.innerWidth) * 100,
+      top: (y / window.innerHeight) * 100,
     });
 
-    setYesScale((s) => Math.min(s + 0.15, 2.5));
+    setYesScale((s) => Math.min(s + 0.1, 1.8));
     setMessage("Hey! That's not allowed 😜");
   };
 
-  const yesClicked = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const yesClicked = () => {
     setMessage("YAY! 💕 You made my day 😍");
 
     const newHearts = Array.from({ length: 25 }).map((_, i) => ({
@@ -40,22 +38,20 @@ function App() {
       left: Math.random() * 100,
     }));
 
-    setHearts((prev) => [...prev, ...newHearts]);
+    setHearts(newHearts);
 
-    setTimeout(() => {
-      setHearts([]);
-    }, 2000);
+    setTimeout(() => setHearts([]), 2000);
   };
 
   return (
     <div className="app">
-      {/* TEXT LAYER */}
+      {/* TEXT */}
       <div className="text-layer">
         <h1>Will you be my Valentine? 💖</h1>
         {message && <p className="message">{message}</p>}
       </div>
 
-      {/* BUTTON LAYER */}
+      {/* BUTTONS */}
       <div className="buttons">
         <button
           className="yes"
@@ -95,4 +91,3 @@ function App() {
 }
 
 export default App;
-

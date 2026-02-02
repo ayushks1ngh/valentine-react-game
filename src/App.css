@@ -3,32 +3,28 @@ body {
   font-family: "Segoe UI", system-ui, sans-serif;
 }
 
-/* APP CONTAINER */
+/* APP */
 .app {
   width: 100vw;
   height: 100vh;
   background: #ffe6eb;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 
-/* TEXT ALWAYS ON TOP */
+/* TEXT */
 .text-layer {
   position: absolute;
   top: 8%;
-  z-index: 10;
+  width: 100%;
   text-align: center;
+  z-index: 10;
   padding: 0 16px;
 }
 
 h1 {
   color: white;
   font-size: clamp(28px, 6vw, 48px);
-  margin-bottom: 10px;
 }
 
 .message {
@@ -38,43 +34,42 @@ h1 {
 
 /* BUTTON AREA */
 .buttons {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* COMMON BUTTON STYLES */
+/* BUTTON BASE */
 button {
   padding: 14px 28px;
   font-size: clamp(16px, 4vw, 22px);
   border: none;
   border-radius: 14px;
   cursor: pointer;
-  transition: transform 0.2s ease;
   user-select: none;
 }
 
-/* YES BUTTON */
+/* YES */
 .yes {
-  position: relative;
   background: #22c55e;
   color: white;
-  z-index: 3;
+  z-index: 2;
+  transition: transform 0.25s ease;
 }
 
-/* NO BUTTON – EVIL BUT MOBILE SAFE */
+/* NO */
 .no {
   position: absolute;
   background: #ef4444;
   color: white;
-  z-index: 4;
+  z-index: 3;
   touch-action: none;
-  user-select: none;
   will-change: top, left;
 }
 
-/* HEART ANIMATION */
+/* HEARTS */
 .heart {
   position: absolute;
   bottom: -20px;
@@ -93,3 +88,4 @@ button {
     opacity: 0;
   }
 }
+
