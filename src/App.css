@@ -20,6 +20,7 @@ body {
   text-align: center;
   z-index: 10;
   padding: 0 16px;
+  pointer-events: none; /* 🔥 THIS FIXES IT */
 }
 
 h1 {
