@@ -12,9 +12,15 @@ function App() {
   const [yesScale, setYesScale] = useState(1);
   const [hearts, setHearts] = useState<Heart[]>([]);
 
-  const moveNoButton = () => {
-    const padding = 100;
+  // YES grows every time NO is interacted with
+  const growYes = () => {
+    setYesScale((s) => Math.min(s + 0.15, 4));
+  };
 
+  const moveNoButton = () => {
+    growYes(); // 🔥 ALWAYS grow YES
+
+    const padding = 100;
     const maxX = window.innerWidth - padding;
     const maxY = window.innerHeight - padding;
 
@@ -26,20 +32,18 @@ function App() {
       top: (y / window.innerHeight) * 100,
     });
 
-    setYesScale((s) => Math.min(s + 0.1, 1.8));
     setMessage("Hey! That's not allowed 😜");
   };
 
   const yesClicked = () => {
     setMessage("YAY! 💕 You made my day 😍");
 
-    const newHearts = Array.from({ length: 25 }).map((_, i) => ({
+    const newHearts = Array.from({ length: 30 }).map((_, i) => ({
       id: Date.now() + i,
       left: Math.random() * 100,
     }));
 
     setHearts(newHearts);
-
     setTimeout(() => setHearts([]), 2000);
   };
 
@@ -64,9 +68,9 @@ function App() {
         <button
           className="no"
           style={{ top: `${noPos.top}%`, left: `${noPos.left}%` }}
-          onMouseEnter={moveNoButton}
-          onMouseMove={moveNoButton}
-          onTouchStart={moveNoButton}
+          onMouseEnter={moveNoButton}   // desktop hover
+          onMouseMove={moveNoButton}    // desktop chase
+          onPointerDown={moveNoButton}  // mobile + mouse
           onClick={(e) => {
             e.preventDefault();
             moveNoButton();
@@ -91,3 +95,4 @@ function App() {
 }
 
 export default App;
+

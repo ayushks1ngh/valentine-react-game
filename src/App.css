@@ -30,6 +30,7 @@ h1 {
 .message {
   font-size: clamp(16px, 4vw, 22px);
   margin-top: 10px;
+  color: white;
 }
 
 /* BUTTON AREA */
@@ -88,4 +89,3 @@ button {
     opacity: 0;
   }
 }
-
